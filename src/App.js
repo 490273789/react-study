@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { createGlobalStyle } from "styled-components";
+import "./App.css";
+import ProvideIndex from "./views/context";
+import { toast } from "./views/tost-manager/index.jsx";
+import ShowInput from "./views/input";
+
+export const GlobalStyle = createGlobalStyle`
+  .main-container {
+    padding: 24px;
+    background: #fff;
+    min-height: calc(100vh - 48px - 48px)
+  }
+`;
 
 function App() {
+  const showTost = () => {
+    toast.current(new Date().toString());
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <div className="App">
+        <ProvideIndex />
+        <ShowInput />
+        <button onClick={showTost}>tost</button>
+      </div>
+    </>
   );
 }
 
