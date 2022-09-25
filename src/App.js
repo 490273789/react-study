@@ -3,6 +3,7 @@ import "./App.css";
 import ProvideIndex from "./views/context";
 import { toast } from "./views/tost-manager/index.jsx";
 import ShowInput from "./views/input";
+import StudyEffect from "./views/hooks/use-effect";
 
 export const GlobalStyle = createGlobalStyle`
   .main-container {
@@ -23,6 +24,8 @@ function App() {
         <ProvideIndex />
         <ShowInput />
         <button onClick={showTost}>tost</button>
+
+        <StudyEffect />
       </div>
     </>
   );
