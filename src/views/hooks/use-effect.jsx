@@ -7,7 +7,7 @@ const StudyEffect = () => {
   useEffect(() => {
     setCount(1);
     console.log(count, "useEffect");
-  });
+  }, [count]);
 
   const handleClick = () => {
     setCount(count + 1);
